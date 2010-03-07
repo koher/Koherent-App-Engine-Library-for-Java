@@ -1,0 +1,100 @@
+Koherent App Engine Library is a library for Google App Engine for Java.
+
+
+# License #########################################################################################
+
+This library is distributed under Apache 2.0 License. See LICENSE, which is a file included in the
+same directory as this file, for more information.
+
+
+# Sample Codes ####################################################################################
+
+## DatastoreMap ##
+
+// operates Datastores like java.util.HashMap
+
+Map<String, Integer> map = new DatastoreMap<String, Integer>("people");
+
+map.put("Tom", 27);
+map.put("Mary", 21);
+map.put("John", 23);
+
+int ageOfMary = map.get("Mary");
+
+map.remove("Tom");
+
+
+## DatastoreInputStream ##
+
+// operates Datastores like java.io.FileInputStream
+
+BufferedWriter writer = null;
+try {
+	writer = new BufferedWriter(new OutputStreamWriter(
+			new DatastoreOutputStream("sample")));
+
+	writer.write("Hello");
+	writer.newLine();
+	writer.write("World");
+	writer.newLine();
+
+	writer.flush();
+} catch (IOException e) {
+	e.printStackTrace();
+} finally {
+	if (writer != null) {
+		writer.close();
+	}
+}
+
+
+## DatastoreOutputStream ##
+
+// operates Datastores like java.io.FileOutputStream
+
+BufferedReader reader = null;
+try {
+	reader = new BufferedReader(new InputStreamReader(
+			new DatastoreInputStream("sample")));
+
+	String line;
+	while ((line = reader.readLine()) != null) {
+		System.out.println(line);
+	}
+} catch (IOException e) {
+	e.printStackTrace();
+} finally {
+	if (reader != null) {
+		reader.close();
+	}
+}
+
+
+# Classes #########################################################################################
+
+## org.koherent.collection.appengine ##
+
+DatastoreMap            : operates Datastores in the same way as java.util.Map
+MemcacheMap             : operates Memcache in the same way as java.util.Map
+CachedDatastoreMap      : DatastoreMap which transparently cache data to Memcache
+FastDatastoreMap        : fast DatastoreMap whose put and remove methods always return null
+FastMemcacheMap         : fast MemcacheMap whose put and remove methods always return null
+FastCachedDatastoreMap  : fast CachedDatastoreMap whose put and remove methods always return null
+
+
+## org.koherent.io.appengine ##
+
+DatastoreInputStream    : operates Datastores in the same way as java.io.InputStream
+DatastoreOutputStrem    : operates Datastores in the same way as java.io.OutputStream
+DatastoreReader         : operates Datastores in the same way as java.io.Reader
+DatastoreWriter         : operates Datastores in the same way as java.io.Writer
+
+
+# How to Use #####################################################################################
+
+Download koherent-appengine-io.jar and copy it into /WEB-INF/lib of a Web Application Project of
+Google App Engine. If you use Eclipse, you also set Build Path (Right Click on the project ->
+Properties -> Java Build Path -> Libraries -> Add JARs).
+
+
+7th Mar 2010
