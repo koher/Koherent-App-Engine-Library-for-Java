@@ -29,5 +29,4 @@ public class BooleanParser implements Parser<Boolean> {
 	public Boolean parse(String string) {
 		return Boolean.parseBoolean(string);
 	}
-
 }

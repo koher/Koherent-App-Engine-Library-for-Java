@@ -33,5 +33,4 @@ public class CharacterParser implements Parser<Character> {
 
 		return string.charAt(0);
 	}
-
 }
