@@ -1,5 +1,11 @@
 Koherent App Engine Library is a library for Google App Engine for Java.
 
+It includes "DatastoreMap" which enable to operate Datastores like java.util.HashMap,
+"DatastoreOutputStream" which enable to write data to Datastores like java.util.FileOutputStream
+and so on.
+
+"CachedDatastoreMap" is also available which is DatastoreMap transparently cache data using Memcache. "FastDatastoreMap" and "FastCachedDatastoreMap" provides faster way to operate Datastores whose put or remove methods always return null.
+
 
 # License #########################################################################################
 
