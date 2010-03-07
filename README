@@ -70,6 +70,13 @@ try {
 }
 
 
+# How to Use #####################################################################################
+
+Download koherent-appengine-lib.jar and copy it into /WEB-INF/lib of a Web Application Project of
+Google App Engine. If you use Eclipse, you also set Build Path (Right Click on the project ->
+Properties -> Java Build Path -> Libraries -> Add JARs).
+
+
 # Classes #########################################################################################
 
 ## org.koherent.collection.appengine ##
@@ -89,12 +96,6 @@ DatastoreOutputStrem    : operates Datastores in the same way as java.io.OutputS
 DatastoreReader         : operates Datastores in the same way as java.io.Reader
 DatastoreWriter         : operates Datastores in the same way as java.io.Writer
 
-
-# How to Use #####################################################################################
-
-Download koherent-appengine-io.jar and copy it into /WEB-INF/lib of a Web Application Project of
-Google App Engine. If you use Eclipse, you also set Build Path (Right Click on the project ->
-Properties -> Java Build Path -> Libraries -> Add JARs).
 
 
 7th Mar 2010
